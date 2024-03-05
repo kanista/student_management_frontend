@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Breadcrumb, Button, Form, Input, message} from 'antd';
+import React from 'react';
+import {Breadcrumb, Button, DatePicker, Form, Input, message, Radio} from 'antd';
 import StudentService from "../Service/StudentService";
 import '../Style/CommonStyle.css';
 import {useNavigate} from "react-router";
@@ -65,6 +65,93 @@ const StudentRegistrationForm = () => {
                     }]}
                 >
                     <Input placeholder="Enter your address"/>
+                </Form.Item>
+                <Form.Item
+                    label="Date Of Birth"
+                    name="dateOfBirth"
+                    rules={[{
+                        required: true,
+                        message: 'Please input your date of birth!'
+                    }]}
+                >
+                    <DatePicker placeholder="Enter your date of birth"/>
+                </Form.Item>
+                <Form.Item
+                    label="Gender"
+                    name="gender"
+                    rules={[{
+                        required: true,
+                        message: 'Please input your gender!'
+                    }]}
+                >
+                    <Radio.Group>
+                        <Radio value="male">Male</Radio>
+                        <Radio value="female">Female</Radio>
+                        <Radio value="other">Other</Radio>
+                    </Radio.Group>
+                </Form.Item>
+                <Form.Item
+                    label="Email"
+                    name="email"
+                    rules={[{
+                        required: true,
+                        message: 'Please input your email address!',
+                        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                    }]}
+                >
+                    <Input placeholder="Enter your email"/>
+                </Form.Item>
+                <Form.Item
+                    label="Course"
+                    name="course"
+                    rules={[{
+                        required: true,
+                        message: 'Please input your course!'
+                    }]}
+                >
+                    <Input placeholder="Enter your course"/>
+                </Form.Item>
+                <Form.Item
+                    label="Phone No"
+                    name="phoneNo"
+                    rules={[{
+                        required: true,
+                        message: 'Please input your phone number!',
+                        pattern: /^\d+$/
+                    }]}
+                >
+                    <Input placeholder="Enter your phone number"/>
+                </Form.Item>
+                <Form.Item
+                    label="Guardian Name"
+                    name="guardianName"
+                    rules={[{
+                        required: true,
+                        message: 'Please input your guardianName!'
+                    }]}
+                >
+                    <Input placeholder="Enter your guardianName"/>
+                </Form.Item>
+                <Form.Item
+                    label="Relationship"
+                    name="relationship"
+                    rules={[{
+                        required: true,
+                        message: 'Please input your relationship!'
+                    }]}
+                >
+                    <Input placeholder="Enter your relationship"/>
+                </Form.Item>
+                <Form.Item
+                    label="Guardian Phone Number"
+                    name="guardianPhoneNumber"
+                    rules={[{
+                        required: true,
+                        message: 'Please input your guardian phone number!',
+                        pattern: /^\d+$/
+                    }]}
+                >
+                    <Input placeholder="Enter your guardian phone number"/>
                 </Form.Item>
                 <Form.Item
                     style={{

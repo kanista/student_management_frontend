@@ -41,8 +41,9 @@ const getStudent = async (id) => {
     try {
         const response = await axios.get(ExternalAPI.GET_STUDENT + id);
         console.log(response)
-        return response.data;
+        return response;
     } catch (error) {
+        console.log(error.response)
         throw error.response ? error.response.data : error.message;
     }
 }

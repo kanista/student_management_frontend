@@ -11,7 +11,7 @@ const NavBar = () => {
         if (item.key === 'register-student') {
             navigate('/register_student');
         } else if (item.key === 'home') {
-            navigate('/student_list');
+            navigate('/');
         }
     };
 
